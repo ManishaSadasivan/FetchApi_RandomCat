@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<head>
+<title>Cat</title>
+<link rel="stylesheet" href="cat.css">
+</head>
+<body>
+    <div id="div">
+
+    </div>
+
+    <Script>
+  async function search(){
+
+    const response=await fetch("https://aws.random.cat/meow");
+    const data=await response.json();
+    console.log(data);
+   const url= data.file;
+ 
+ document.getElementById("div").innerHTML=`
+ <h1>Random Cat Image</h1><img id="catImg" width="50%" height="50%"src="${url}">
+ `;
+ 
+  }
+  search();
+    </Script>
+</body>
